@@ -155,9 +155,9 @@ public class ReuseableMethods {
 	
 	
 	
-	public static void validateTextBoxMsg(WebElement obj, String expectedMsg){
-		
-	}
+//	public static void validateTextBoxMsg(WebElement obj, String expectedMsg){
+//		
+//	}
 
 	/* Method Name: startReport
 	 * Method description: Create report as a log for tests results
@@ -210,7 +210,7 @@ public class ReuseableMethods {
 
 	/* Method Name: Update_Report
 	 * Method description: Update report(log) used for saving tests results
-	 * Arguments: Res_type --> ???,  Action --> ???? , result --
+	 * Arguments: Res_type --> ???,  Action --> ???? , result --> result of running the test
 	 * Created By: Fighter2016
 	 * Created Date: Jan  2016
 	 * Last Modified :Jan 11 2016
@@ -296,14 +296,15 @@ public class ReuseableMethods {
 			
 		}
 		
-	/*Method Name: writeXl
-	 *Brief Description: Write text value to xl sheet
-	 *Arguments: dtPath --> Xl Sheet Path, sheetName --> xl Sheet Name, iRow --> row number, iCol --> column number, xlData --> text value to be entered
-	 *Creation Date: Jan 04 2016
-	 *Last Modified: Jan 04 2016
-	 *Created by: Fighters2016 Automation Team
-	 * */
-	public static void writeXl(String abcd, String sheetName, int iRow, int iCol, String xlData ) throws IOException{
+		/*Method Name: writeXl
+		 *Brief Description: Write text value to xl sheet
+		 *Arguments: dtPath --> Xl Sheet Path, sheetName --> xl Sheet Name, iRow --> row number, iCol --> column number, xlData --> text value to be entered
+		 *Creation Date: Jan 04 2016
+		 *Last Modified: Jan 04 2016
+		 *Created by: Fighters2016 Automation Team
+		 * */
+		
+		public static void writeXl(String abcd, String sheetName, int iRow, int iCol, String xlData ) throws IOException{
 			/*Step 1: Get the XL Path*/
 			File  xlFile = new File(abcd);
 
@@ -351,4 +352,4 @@ public class ReuseableMethods {
 			fout.close();
 		}
 
-}
+	}

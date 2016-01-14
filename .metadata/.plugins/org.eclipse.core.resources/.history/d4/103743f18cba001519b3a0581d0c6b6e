@@ -155,9 +155,9 @@ public class ReuseableMethods {
 	
 	
 	
-	public static void validateTextBoxMsg(WebElement obj, String expectedMsg){
-		
-	}
+//	public static void validateTextBoxMsg(WebElement obj, String expectedMsg){
+//		
+//	}
 
 	/* Method Name: startReport
 	 * Method description: Create report as a log for tests results

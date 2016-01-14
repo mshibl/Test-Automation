@@ -155,21 +155,17 @@ public class ReuseableMethods {
 	
 	
 	
-	public static void validateTextBoxMsg(WebElement obj, String expectedMsg){
-		
-	}
+//	public static void validateTextBoxMsg(WebElement obj, String expectedMsg){
+//		
+//	}
 
-	/* Method Name: startReport
-	 * Method description: Create report as a log for tests results
-	 * Arguments: scriptName --> Test being reported,  ReportsPath --> Path to where report will be saved
-	 * Created By: Fighter2016
-	 * Created Date: Jan 2016
-	 * Last Modified :Jan 13 2016
-	 * */
-	public static void startReport(String scriptName, String ReportsPath) throws IOException{
+		public static void startReport(String scriptName, String ReportsPath) throws IOException{
 
 			String strResultPath = null;
+
+
 			String testScriptName =scriptName;
+
 
 			cur_dt = new Date(); 
 			DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
@@ -208,14 +204,7 @@ public class ReuseableMethods {
 
 		}
 
-	/* Method Name: Update_Report
-	 * Method description: Update report(log) used for saving tests results
-	 * Arguments: Res_type --> ???,  Action --> ???? , result --
-	 * Created By: Fighter2016
-	 * Created Date: Jan  2016
-	 * Last Modified :Jan 11 2016
-	 * */
-	public static void Update_Report(String Res_type,String Action, String result) throws IOException {
+		public static void Update_Report(String Res_type,String Action, String result) throws IOException {
 			String str_time;
 			Date exec_time = new Date();
 			DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
@@ -252,14 +241,15 @@ public class ReuseableMethods {
 			} 
 		}
 		
-	/*Method Name: readXl
-	 *Brief Description: Read the XL sheet content and return xl content through 2-D array
-	 *Arguments: dtPath --> Xl Sheet Path, sheetName --> xl Sheet Name
-	 *Creation Date: Dec 23 2015
-	 *Last Modified: Dec 23 2015
-	 *Created by: Fighters2016 Automation Team
-	 * */
-	public static String[][] readXl(String dtPath, String sheetName) throws IOException{
+		/*Method Name: readXl
+		 *Brief Description: Read the XL sheet content and return xl content through 2-D array
+		 *Arguments: dtPath --> Xl Sheet Path, sheetName --> xl Sheet Name
+		 *Creation Date: Dec 23 2015
+		 *Last Modified: Dec 23 2015
+		 *Created by: Fighters2016 Automation Team
+		 * */
+		
+		public static String[][] readXl(String dtPath, String sheetName) throws IOException{
 			
 			
 			/*Step 1: Get the XL Path*/
@@ -296,14 +286,15 @@ public class ReuseableMethods {
 			
 		}
 		
-	/*Method Name: writeXl
-	 *Brief Description: Write text value to xl sheet
-	 *Arguments: dtPath --> Xl Sheet Path, sheetName --> xl Sheet Name, iRow --> row number, iCol --> column number, xlData --> text value to be entered
-	 *Creation Date: Jan 04 2016
-	 *Last Modified: Jan 04 2016
-	 *Created by: Fighters2016 Automation Team
-	 * */
-	public static void writeXl(String abcd, String sheetName, int iRow, int iCol, String xlData ) throws IOException{
+		/*Method Name: writeXl
+		 *Brief Description: Write text value to xl sheet
+		 *Arguments: dtPath --> Xl Sheet Path, sheetName --> xl Sheet Name, iRow --> row number, iCol --> column number, xlData --> text value to be entered
+		 *Creation Date: Jan 04 2016
+		 *Last Modified: Jan 04 2016
+		 *Created by: Fighters2016 Automation Team
+		 * */
+		
+		public static void writeXl(String abcd, String sheetName, int iRow, int iCol, String xlData ) throws IOException{
 			/*Step 1: Get the XL Path*/
 			File  xlFile = new File(abcd);
 
@@ -351,4 +342,4 @@ public class ReuseableMethods {
 			fout.close();
 		}
 
-}
+	}

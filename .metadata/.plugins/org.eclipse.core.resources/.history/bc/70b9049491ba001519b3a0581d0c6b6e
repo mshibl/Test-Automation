@@ -16,7 +16,7 @@ public class DriverClass {
 	public static int reportFlag;
 	public static void main(String[] args) throws IOException, NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		
-		String dtPath = "/Users/Shibl/Desktop/Test Automation/TestSuit.xls";
+		String dtPath = "/Users/Shibl/Desktop/Test AutomationLog/TestSuit.xls";
 		String[][] recData = ReuseableMethods.readXl(dtPath, "Sheet1");
 		
 		for(int i = 1; i<recData.length;i++){
@@ -27,7 +27,7 @@ public class DriverClass {
 				driver = new FirefoxDriver();
 				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 				// Java Reflection
-				ReuseableMethods.startReport(testScript, "/Users/Shibl/Desktop/Test Automation");
+				ReuseableMethods.startReport(testScript, "/Users/Shibl/Desktop/Test AutomationLog");
 				Method tc = AutomationScript.class.getMethod(testScript);
 				tc.invoke(tc);
 				ReuseableMethods.bw.close();

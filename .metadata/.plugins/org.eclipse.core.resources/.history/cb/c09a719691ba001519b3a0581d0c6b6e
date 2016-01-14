@@ -27,7 +27,7 @@ public class DriverClass {
 				driver = new FirefoxDriver();
 				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 				// Java Reflection
-				ReuseableMethods.startReport(testScript, "/Users/Shibl/Desktop/Test Automation");
+				ReuseableMethods.startReport(testScript, "/Users/Shibl/Desktop/Test AutomationLog");
 				Method tc = AutomationScript.class.getMethod(testScript);
 				tc.invoke(tc);
 				ReuseableMethods.bw.close();

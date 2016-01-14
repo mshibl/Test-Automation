@@ -1,0 +1,48 @@
+/* Alter this framework such that we should be able to see pass or fail in testSuit
+ * Create a hyperlink to open the latest report in testSuit
+ * */
+
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+
+public class DriverClass {
+	public static WebDriver driver;
+	public static int reportFlag;
+	public static void main(String[] args) throws IOException, NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+		
+		String dtPath = "C:/Users/Abhi/Google Drive/Nov 30 2015/Read only/Framework/TestSuit.xls";
+		String[][] recData = ReuseableMethods.readXl(dtPath, "Sheet1");
+		
+		for(int i = 1; i<recData.length;i++){
+			
+			if(recData[i][1].equalsIgnoreCase("Y")){
+				reportFlag = 0;
+				String testScript =  recData[i][2];
+				driver = new FirefoxDriver();
+				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+				// Java Reflection
+				ReuseableMethods.startReport(testScript, "C:/Users/Abhi/Google Drive/Nov 30 2015/Read only/Framework/Report/");
+				Method tc = AutomationScript.class.getMethod(testScript);
+				tc.invoke(tc);
+				ReuseableMethods.bw.close();
+				
+				if(reportFlag==0){
+					ReuseableMethods.writeXl(dtPath, "Sheet1", i, 3, "Pass");
+				}else{
+					ReuseableMethods.writeXl(dtPath, "Sheet1", i, 3, "Fail");
+				}
+			} else{
+				ReuseableMethods.writeXl(dtPath, "Sheet1", i, 3, "NE");
+			}
+			
+		}
+		
+	}
+
+}

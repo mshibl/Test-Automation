@@ -16,5 +16,10 @@ public class SFDCHomePage {
 		WebElement logOut = DriverClass.driver.findElement(By.xpath("//*[@id='userNav-menuItems']/a[5]"));
 		ReuseableMethods.clickButton(logOut, "logOut");
 	}
+	
+	public void openProfile() throws IOException{
+		WebElement myProfile = DriverClass.driver.findElement(By.xpath(".//*[@id='userNav-menuItems']/a[1]"));
+		ReuseableMethods.clickButton(myProfile,"myProfile");
+	}
 
 }

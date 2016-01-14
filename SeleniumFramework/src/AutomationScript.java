@@ -5,6 +5,7 @@
  * */
 
 import java.io.IOException;
+import java.sql.Driver;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -30,8 +31,6 @@ public class AutomationScript {
 	
 	
 	public static void LoginToSalesForce() throws IOException, InterruptedException{
-		
-		
 		LoginPage LP = new LoginPage(); 
 		
 		LP.launchApp();
@@ -44,7 +43,7 @@ public class AutomationScript {
 	
 	// Automation Script or Test Script
 	public static void CheckRemeberMe() throws IOException{
-		ReuseableMethods.startReport("CheckRemeberMe", "C:/Users/Abhi/Google Drive/Nov 30 2015/Read only/Framework/Report/");
+		ReuseableMethods.startReport("CheckRemeberMe", "/Users/Shibl/Desktop/Test Automation");
 		LoginPage LP = new LoginPage(); 
 		LP.launchApp();
 		LP.enterUN("prasanthi.alapati@gmail.com");
@@ -94,6 +93,31 @@ public class AutomationScript {
 
 		ReuseableMethods.bw.close();
 	}
+	
+//	TC06
+	public static void EditUserProfile() throws IOException{
+		ReuseableMethods.startReport("EditUserProfile", "/Users/Shibl/Desktop/Test Automation");
+		LoginPage LP = new LoginPage(); 
+		LP.launchApp();
+		LP.enterUN("mohamed.shibl@hotmail.com");
+		LP.enterPWD("password123");
+		LP.clickLogin();
+		SFDCHomePage HP = new SFDCHomePage();
+		HP.selectUserMenuDropDown();
+		HP.openProfile();
+		WebElement editContactInformation = DriverClass.driver.findElement(By.xpath(".//*[@id='chatterTab']/div[2]/div[2]/div[1]/h3/div/div/a/img"));
+		ReuseableMethods.clickButton(editContactInformation, "editContactInformation");
+		WebElement aboutTab = DriverClass.driver.findElement(By.xpath(".//*[@id='aboutTab']/a"));
+		ReuseableMethods.clickButton(aboutTab, "aboutTab");
+		
+
+//		WebElement overviewButton = DriverClass.driver.findElement(By.xpath(".//*[@id='profileTab_sfdc.ProfilePlatformOverview']"));
+//		ReuseableMethods.clickButton(overviewButton, "profile overview");
+		HP.selectUserMenuDropDown();
+		HP.clickLogOut();
+		DriverClass.driver.quit();
+	}
+	
 	
 	public static void login(){
 		System.out.println("Login script is executing...");

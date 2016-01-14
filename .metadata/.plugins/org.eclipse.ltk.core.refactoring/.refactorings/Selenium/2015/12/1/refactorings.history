@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Convert local variable &apos;FUT.main().user_input&apos; in &apos;FUT.main()&apos; to field&#x0A;- Original project: &apos;Selenium&apos;&#x0A;- Original element: &apos;FUT.main().user_input&apos;&#x0A;- Field name: &apos;user_input&apos;&#x0A;- Initialize field in method&#x0A;- Declared visibility: &apos;private&apos;&#x0A;- Declare field &apos;static&apos;" description="Convert local variable &apos;user_input&apos; to field" final="false" flags="2" id="org.eclipse.jdt.ui.promote.temp" initialize="1" input="/src&lt;{FUT.java" name="user_input" selection="842 37" stamp="1451268132935" static="true" version="1.0" visibility="2"/>
+</session>
